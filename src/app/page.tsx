@@ -4,6 +4,7 @@ import { MegaDropzone } from "@/components/MegaDropzone";
 import { ToolGrid } from "@/components/ToolGrid";
 import { MergeTool } from "@/components/MergeTool";
 import { SplitTool } from "@/components/SplitTool";
+import { CompressTool } from "@/components/CompressTool";
 import dynamic from 'next/dynamic';
 
 const SignTool = dynamic(() => import('@/components/SignTool').then(mod => mod.SignTool), { ssr: false });
@@ -13,7 +14,7 @@ import { Trash2 } from "lucide-react";
 
 export default function Home() {
   const [files, setFiles] = useState<File[]>([]);
-  const [activeTool, setActiveTool] = useState<"merge" | "split" | "sign" | null>(null);
+  const [activeTool, setActiveTool] = useState<"merge" | "split" | "sign" | "compress" | null>(null);
 
   const handleFilesSelected = (selectedFiles: File[]) => {
     setFiles((prev) => [...prev, ...selectedFiles]);
@@ -24,7 +25,7 @@ export default function Home() {
     setActiveTool(null);
   };
 
-  const handleToolSelect = (tool: "merge" | "split" | "sign") => {
+  const handleToolSelect = (tool: "merge" | "split" | "sign" | "compress") => {
     if (files.length === 0) {
       alert("⚠️ YO! DROP SOME FILES FIRST!");
       return;
@@ -40,7 +41,7 @@ export default function Home() {
             Frostlynn<span className="text-neo-purple">PDF</span>
           </h1>
           <div className="text-lg font-bold border-2 border-black px-4 py-2 bg-white shadow-neo-sm">
-            v1.0.0
+            v1.1.0
           </div>
         </header>
 
@@ -51,6 +52,7 @@ export default function Home() {
               {activeTool === "merge" && <MergeTool files={files} onBack={() => setActiveTool(null)} />}
               {activeTool === "split" && <SplitTool files={files} onBack={() => setActiveTool(null)} />}
               {activeTool === "sign" && <SignTool files={files} onBack={() => setActiveTool(null)} />}
+              {activeTool === "compress" && <CompressTool files={files} onBack={() => setActiveTool(null)} />}
             </div>
           ) : (
             // Dashboard View

@@ -2,27 +2,8 @@
 
 > **Neo-Brutalist PDF Tools. 100% Client-Side. No BS.**
 
-FrostlynnPDF is a modern, privacy-focused PDF manipulation tool suite built with a bold Neo-Brutalist aesthetic. All processing happens directly in your browser—your files never leave your device.
+FrostlynnPDF is a modern, privacy-focused PDF manipulation tool suite built with a bold Neo-Brutalist aesthetic. Designed as a secure, client-side alternative to **iLovePDF** and **Smallpdf**, all processing happens directly in your browser—your files never leave your device.
 
-
-## ⚡ Features
-
-### 🔀 Merge
-Combine multiple PDFs into one document.
-- **Drag-and-Drop Reordering**: Determine the exact sequence of your files.
-- **Instant Processing**: Merges happen locally in milliseconds.
-
-### ✂️ Split
-Burst a PDF into individual pages.
-- **Smart Naming**: Output files are named `[Original]-page-[N].pdf` for easy organization.
-- **Bulk Action**: Process an entire document with one click.
-
-### ✍️ Sign
-Add signatures to your documents without a printer.
-- **Three Modes**: Draw your signature, upload an image, or type it out.
-- **Blind & Real Preview**: See exactly where your signature lands on the page.
-- **Draggable Placement**: Simply drag your signature to the perfect spot.
-- **Transparent Stamping**: Signatures are applied with proper transparency.
 
 ## 🛠️ Tech Stack
 
@@ -77,7 +58,7 @@ You can containerize and run FrostlynnPDF using Docker.
 Build and start the container with a single command:
 
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 The application will be running at [http://localhost:3001](http://localhost:3001).

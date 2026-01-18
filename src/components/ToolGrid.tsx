@@ -1,9 +1,9 @@
-import { FileStack, Scissors, PenTool } from "lucide-react";
+import { FileStack, Scissors, PenTool, Minimize2 } from "lucide-react";
 import { NeoCard } from "./NeoCard";
 import { NeoButton } from "./NeoButton";
 
 interface ToolGridProps {
-    onToolSelect: (tool: "merge" | "split" | "sign") => void;
+    onToolSelect: (tool: "merge" | "split" | "sign" | "compress") => void;
 }
 
 export function ToolGrid({ onToolSelect }: ToolGridProps) {
@@ -34,10 +34,18 @@ export function ToolGrid({ onToolSelect }: ToolGridProps) {
             // Let's use primary for now, or update NeoButton.
             btnVariant: "success" as const,
         },
+        {
+            id: "compress",
+            name: "Compress PDF",
+            description: "Squeeze those bytes. Garbage collect unused objects.",
+            icon: Minimize2,
+            color: "text-neo-blue",
+            btnVariant: "info" as const,
+        },
     ];
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 w-full mt-12">
             {tools.map((tool) => (
                 <NeoCard key={tool.id} title={tool.name} className="flex flex-col h-full bg-white">
                     <div className="flex-grow">
@@ -49,7 +57,7 @@ export function ToolGrid({ onToolSelect }: ToolGridProps) {
                     <NeoButton
                         variant={tool.btnVariant}
                         className="w-full"
-                        onClick={() => onToolSelect(tool.id as "merge" | "split" | "sign")}
+                        onClick={() => onToolSelect(tool.id as "merge" | "split" | "sign" | "compress")}
                     >
                         SELECT
                     </NeoButton>

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes, forwardRef } from "react";
 
 interface NeoButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: "primary" | "secondary" | "accent" | "danger" | "success";
+    variant?: "primary" | "secondary" | "accent" | "danger" | "success" | "info";
 }
 
 const NeoButton = forwardRef<HTMLButtonElement, NeoButtonProps>(
@@ -14,6 +14,7 @@ const NeoButton = forwardRef<HTMLButtonElement, NeoButtonProps>(
             accent: "bg-neo-purple hover:bg-neo-purple/90 text-white",
             danger: "bg-neo-pink hover:bg-neo-pink/90 text-white",
             success: "bg-neo-green hover:bg-neo-green/90 text-black",
+            info: "bg-neo-blue hover:bg-neo-blue/90 text-white",
         };
 
         return (
