@@ -4,7 +4,6 @@
 
 FrostlynnPDF is a modern, privacy-focused PDF manipulation tool suite built with a bold Neo-Brutalist aesthetic. All processing happens directly in your browser—your files never leave your device.
 
-![FrostlynnPDF Preview](https://via.placeholder.com/800x400?text=App+Preview+Coming+Soon)
 
 ## ⚡ Features
 
