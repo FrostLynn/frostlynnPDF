@@ -40,19 +40,62 @@ Built with cutting-edge web technologies:
 
 ## 🚀 Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- **Node.js**: Version 20 or higher.
+- **Package Manager**: npm, yarn, pnpm, or bun.
+
+### Installation
+
+1. Clone or download the repository.
+2. Install dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+### Development Server
+
+Run the development server locally:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+
+## 🐳 Docker Deployment
+
+You can containerize and run FrostlynnPDF using Docker.
+
+### Using Docker Compose (Recommended)
+
+Build and start the container with a single command:
+
+```bash
+docker-compose up -d --build
+```
+
+The application will be running at [http://localhost:3001](http://localhost:3001).
+
+### Manual Build
+
+1. **Build the image:**
+
+   ```bash
+   docker build -t frostlynn-pdf .
+   ```
+
+2. **Run the container:**
+
+   ```bash
+   # Map host port 3001 to container port 3000
+   docker run -d -p 3001:3000 frostlynn-pdf
+   ```
 
 ## 🎨 Design Philosophy
 
